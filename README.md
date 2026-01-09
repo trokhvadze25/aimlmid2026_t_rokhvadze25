@@ -251,7 +251,7 @@ The chart reveals the relative proportion of spam and legitimate emails, which i
 
 A heatmap visualization of the confusion matrix is generated to provide a clearer view of model performance.
 
-![Confusion Matrix](images/confusion_matrix.png)
+![Confusion Matrix](confusion_matrix.png)
 
 
 The heatmap visually highlights correct and incorrect classifications, making it easier to analyze which types of errors the model makes.
