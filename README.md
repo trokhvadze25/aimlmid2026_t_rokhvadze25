@@ -1,4 +1,4 @@
-# aimlmid2026_t_rokhvadze25
+# Midterm
 
 Assignment 1 – Finding Pearson’s Correlation Coefficient
 
