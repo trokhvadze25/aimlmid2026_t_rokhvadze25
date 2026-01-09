@@ -4,7 +4,7 @@ Assignment 1 – Finding Pearson’s Correlation Coefficient
 
 The data points were collected manually from the interactive graph available at max.ge/aiml_midterm/69428_html by hovering over each blue dot and recording the displayed (x,y)coordinates. I wrote the (x,y)coordinates into a CSV file from which the Python code will read them.
 
-To measure the relationship between the two variables, Pearson’s correlation coefficient was used. Pearson’s correlation coefficient quantifies the strength and direction of a linear relationship between two numerical variables.
+To measure the relationship between the two variables, Pearson’s correlation coefficient was used. Pearson’s correlation coefficient quantifies the strength and direction of a linear relationship between two numerical variables.The solution is provided in Python code in the "Task 1" folder.
 
 The calculation process is as follows:
 	First, the mean value of all x values and the mean value of all y values are calculated.
