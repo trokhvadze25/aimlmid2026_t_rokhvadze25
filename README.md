@@ -15,3 +15,5 @@ The calculation process is as follows:
 Using this method, the calculated Pearson correlation coefficient for the given data is: r≈0.9997
 
 This value indicates a very strong positive linear correlation. As the value of x increases, the value of y also increases in an almost perfectly linear manner. This conclusion is further supported by the scatter plot, which shows the data points forming an almost straight line with a positive slope.
+
+Visualisation : ![Scatter Plot](scatter_plot.png)
