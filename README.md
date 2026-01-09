@@ -25,7 +25,18 @@ Visualisation :
 
 
 
+
+
+
+
+
+
+
+
 **Assignment 2 – Spam Email Detection**
+
+
+
 
 
 
@@ -53,6 +64,8 @@ Uploading the dataset to the repository ensures reproducibility and transparency
 
 
 
+
+
 **Data Loading and Processing**
 
 The dataset is loaded using the pandas library. After loading, the data is divided into two main components:
@@ -76,6 +89,140 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.3, random_state=42
 )
 ```
+
+
+
+
+
+
+**Logistic Regression Model**
+
+Logistic Regression is used as the classification algorithm because it is well suited for binary classification problems, such as distinguishing between spam and legitimate emails.
+
+The model learns a linear combination of the input features and applies a logistic (sigmoid) function to estimate the probability that an email belongs to the spam class.
+
+
+```
+model = LogisticRegression(max_iter=1000)
+model.fit(X_train, y_train)
+```
+
+
+
+
+**Model Coefficients**
+
+After training, the coefficients of the Logistic Regression model are extracted. Each coefficient represents the influence of a specific feature on the probability that an email is classified as spam.
+
+Positive coefficient: increases the likelihood of spam
+
+Negative coefficient: decreases the likelihood of spam
+
+
+```
+for feature, coef in zip(X.columns, model.coef_[0]):
+    print(feature, coef)
+
+print("Intercept:", model.intercept_)
+```
+
+These coefficients provide insight into which email features contribute most strongly to spam detection.
+
+
+
+
+
+
+
+**Model Validation**
+
+The trained model is validated using data that was not used for training. Two evaluation metrics are calculated:
+
+Confusion Matrix: shows correct and incorrect classifications
+
+Accuracy: measures the proportion of correctly classified emails
+
+
+
+```
+y_pred = model.predict(X_test)
+
+cm = confusion_matrix(y_test, y_pred)
+accuracy = accuracy_score(y_test, y_pred)
+```
+
+The confusion matrix includes:
+
+True Positives: correctly classified spam emails
+
+True Negatives: correctly classified legitimate emails
+
+False Positives: legitimate emails classified as spam
+
+False Negatives: spam emails classified as legitimate
+
+Accuracy provides an overall measure of the model’s performance.
+
+
+
+
+
+
+**Email Text Classification Capability**
+
+The application is capable of classifying new email text provided by the user.
+The email text is parsed, and the same features used in the dataset are extracted from the raw text.
+
+```
+def extract_features(text):
+    text_lower = text.lower()
+    words = len(text.split())
+    links = text_lower.count("http")
+    capital_words = sum(1 for w in text.split() if w.isupper())
+    spam_word_count = (
+        text_lower.count("free")
+        + text_lower.count("win")
+        + text_lower.count("urgent")
+        + text_lower.count("money")
+    )
+    return [words, links, capital_words, spam_word_count]
+```
+
+
+These extracted features are then passed to the trained model to determine whether the email is spam or legitimate.
+
+```
+def classify_email(text):
+    features = extract_features(text)
+    prediction = model.predict([features])[0]
+    return "SPAM" if prediction == 1 else "LEGITIMATE"
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
