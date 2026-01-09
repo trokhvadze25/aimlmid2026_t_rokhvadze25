@@ -201,28 +201,44 @@ def classify_email(text):
 
 
 
+**Manually Composed Spam Email**
+
+Subject: FREE MONEY – Act Now!
+
+You won free money! Click the link below to claim your prize:
+http://spam-link.example
+
+Explanation:
+This email was intentionally designed to resemble spam by including promotional language, urgency, capitalized words, and a suspicious hyperlink. These characteristics align with features commonly associated with spam emails in the dataset.
 
 
 
 
 
+**Manually Composed Spam Email**
+
+**Subject:** FREE MONEY – Act Now!
+
+You won free money! Click the link below to claim your prize:
+http://spam-link.example
+
+
+This email was intentionally designed to resemble spam by including promotional language, urgency, capitalized words, and a suspicious hyperlink. These characteristics align with features commonly associated with spam emails in the dataset.
 
 
 
 
+**Visualization – Class Distribution**
 
 
+A bar chart is generated to show the number of spam and legitimate emails in the dataset.
+This visualization helps identify whether the dataset is balanced or imbalanced
 
 
+![Class Distribution](Task 2/images/class_distribution.png)
 
 
-
-
-
-
-
-
-
+The chart reveals the relative proportion of spam and legitimate emails, which is important for understanding how class imbalance may affect model performance.
 
 
 
