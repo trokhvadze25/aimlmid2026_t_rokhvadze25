@@ -35,7 +35,8 @@ Visualisation :
 
 **Assignment 2 – Spam Email Detection**
 
-
+The main implementation for this assignment is contained in the file `spam_classifier.py`.  
+This file is executed as a Python console application and performs data loading, model training, validation, and email text classification.
 
 
 
@@ -128,8 +129,14 @@ print("Intercept:", model.intercept_)
 
 These coefficients provide insight into which email features contribute most strongly to spam detection.
 
+```
+**Model Coefficient Values (from program output):**
 
-
+- words: 0.0082  
+- links: 0.8082  
+- capital_words: 0.4800  
+- spam_word_count: 0.7019  
+```
 
 
 
@@ -162,7 +169,8 @@ False Positives: legitimate emails classified as spam
 False Negatives: spam emails classified as legitimate
 
 Accuracy provides an overall measure of the model’s performance.
-
+The trained Logistic Regression model achieved an accuracy of **96.4%** on the test dataset.  
+This indicates that the model correctly classified the majority of emails it had not seen during training.
 
 
 
