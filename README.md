@@ -28,7 +28,8 @@ Visualisation :
 **Assignment 2 – Spam Email Detection**
 
 
-1. Training Dataset
+
+**Training Dataset**
 
 The dataset used in this assignment is available in the GitHub repository at the following link:
 
@@ -52,13 +53,29 @@ Uploading the dataset to the repository ensures reproducibility and transparency
 
 
 
+**Data Loading and Processing**
+
+The dataset is loaded using the pandas library. After loading, the data is divided into two main components:
+
+Features (X): numerical attributes describing email characteristics
+
+Target (y): email class (is_spam), indicating spam or legitimate emails
+
+To evaluate the model fairly, the dataset is split into training and testing subsets.
+Seventy percent (70%) of the data is used for training the model, while the remaining thirty percent (30%) is reserved for validation.
+This approach allows the model to be evaluated on data it has not seen during training.
 
 
+```
+data = pd.read_csv("data/t_rokhvadze25_69428.csv")
 
+X = data.drop(columns=["is_spam"])
+y = data["is_spam"]
 
-
-
-
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.3, random_state=42
+)
+```
 
 
 
