@@ -235,7 +235,7 @@ A bar chart is generated to show the number of spam and legitimate emails in the
 This visualization helps identify whether the dataset is balanced or imbalanced
 
 
-![Class Distribution](Task 2/images/class_distribution.png)
+![Class Distribution](class_distribution.png)
 
 
 The chart reveals the relative proportion of spam and legitimate emails, which is important for understanding how class imbalance may affect model performance.
